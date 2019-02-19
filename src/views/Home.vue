@@ -29,14 +29,18 @@
       <button v-on:click="createRecipe()">Create</button>
     </div>
 
-    <p>All Recipes</p>
     <h1>All Recipes</h1>
     <div v-for="recipe in recipes">
       <h1>{{ recipe.title }}</h1>
       <img v-bind:src="recipe.image_url " v-bind:atl="recipe.title">
-      <p>Prep Time: {{ recipe.prep_time }}</p>
-      <p>Ingredients: {{ recipe.ingredients }}</p>
-      <p>Directions: {{ recipe.directions }}</p>
+      <div>
+        <button v-on:click="currentRecipe = recipe">More Info</button>
+      </div>
+      <div v-if="recipe === currentRecipe">
+        <p>Prep Time: {{ recipe.prep_time }}</p>
+        <p>Ingredients: {{ recipe.ingredients }}</p>
+        <p>Directions: {{ recipe.directions }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -59,7 +63,8 @@ export default {
       newRecipePrepTime: "",
       newRecipeIngredients: "",
       newRecipeDirections: "",
-      newRecipeImageUrl: ""
+      newRecipeImageUrl: "",
+      currentRecipe: {}
     };
   },
   created: function() {
