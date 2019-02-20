@@ -1,7 +1,11 @@
 <template>
   <div class="recipes-new">
     <h1>New Recipe</h1>
-    <div>
+    <ul>
+      <li v-for="error in errors">{{ error }}</li>
+    </ul>
+
+    <form v-on:submit.prevent="submit()">
       <div>
         Title: <input v-model="newRecipeTitle">
       </div>
@@ -26,8 +30,8 @@
         Image Url: <input v-model="newRecipeImageUrl">
       </div>
 
-      <button v-on:click="createRecipe()">Create</button>
-    </div>
+      <input type="submit" value="Create">
+    </form>
   </div>
 </template>
 
@@ -45,12 +49,13 @@ export default {
       newRecipePrepTime: "",
       newRecipeIngredients: "",
       newRecipeDirections: "",
-      newRecipeImageUrl: ""
+      newRecipeImageUrl: "",
+      errors: []
     };
   },
   created: function() {},
   methods: {
-    createRecipe: function() {
+    submit: function() {
       console.log("Create the recipe...");
       var params = {
                     title: this.newRecipeTitle,
@@ -65,6 +70,8 @@ export default {
         .then(response => {
           console.log("Success", response.data);
           this.$router.push("/")
+        }).catch(error => {
+          this.errors = error.response.data.errors;
         });
     }
   }
