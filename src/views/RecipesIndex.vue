@@ -2,11 +2,13 @@
   <div class="recipes-index">
 
     <h1>All Recipes</h1>
-    <div v-for="recipe in recipes">
-      <h1>{{ recipe.title }}</h1>
-      <router-link v-bind:to="'/recipes/' + recipe.id">
-        <img v-bind:src="recipe.image_url " v-bind:atl="recipe.title">
-      </router-link>
+    <div class="row">
+      <div class="col-md-4" v-for="recipe in recipes">
+        <h1>{{ recipe.title }}</h1>
+        <router-link v-bind:to="'/recipes/' + recipe.id">
+          <img v-bind:src="recipe.image_url " v-bind:atl="recipe.title">
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
