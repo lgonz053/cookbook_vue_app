@@ -6,15 +6,15 @@
     <h4>Prep Time: {{ recipe.formatted.prep_time }}</h4>
     <h3>Ingredients:</h3>
 
-    <ul>
+    <!-- <ul> -->
        <li v-for="ingredient in recipe.formatted.ingredients">{{ ingredient }}</li>
-    </ul>
+    <!-- </ul> -->
 
     <h3>Directions:</h3>
 
-    <ol>
+    <!-- <ol> -->
       <li v-for="direction in recipe.formatted.directions">{{ direction }}</li>
-    </ol>
+    <!-- </ol> -->
 
 
     <router-link class="btn btn-primary" :to="'/recipes/' + recipe.id + '/edit'">Edit</router-link>
