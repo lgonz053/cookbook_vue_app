@@ -5,7 +5,7 @@ import axios from "axios";
 import Vue2Filters from 'vue2-filters'
 
 axios.defaults.baseURL = 
-  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://cryptic-reaches-55566.herokuapp.com";
 
 var jwt = localStorage.getItem("jwt");
 if (jwt) {

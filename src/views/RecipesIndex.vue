@@ -2,7 +2,11 @@
   <div class="recipes-index">
     <h1>All Recipes</h1>
     <div>
-      Filter Title: <input v-model="titleFilter">
+      Filter Title: <input v-model="titleFilter" list='titles'>
+
+      <datalist id="titles">
+        <option v-for="recipe in recipes">{{ recipe.title }}</option>
+      </datalist>
     </div>
 
     <div class="row">

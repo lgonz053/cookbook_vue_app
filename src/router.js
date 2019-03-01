@@ -7,6 +7,7 @@ import RecipesEdit from './views/RecipesEdit.vue'
 import Signup from './views/Signup.vue'
 import Login from './views/Login.vue'
 import Logout from './views/Logout.vue'
+import RecipesTable from './views/RecipesTable.vue'
 
 Vue.use(Router)
 
@@ -21,6 +22,7 @@ export default new Router({
     { path: '/recipes/:id/edit', name: 'recipes-edit', component: RecipesEdit },
     { path: "/signup", name: "signup", component: Signup },
     { path: "/login", name: "login", component: Login },
-    { path: "/logout", name: "logout", component: Logout }
+    { path: "/logout", name: "logout", component: Logout },
+    { path: "/table", name: "table", component: RecipesTable}
   ]
 })
