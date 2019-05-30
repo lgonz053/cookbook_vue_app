@@ -82,9 +82,9 @@ export default {
     orderIndicator: function(inputAttribute) {
 
       if (this.sortAttribute === inputAttribute && this.sortOrder == 1) {
-        return #8595;
+        return 8595;
       } else if (this.sortAttribute === inputAttribute && this.sortOrder == -1) {
-        return #8593;
+        return 8593;
       } else {
         return " ";
       }
